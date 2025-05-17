@@ -25,6 +25,8 @@
         <activity android:name=".LoginScreen" />
         <activity android:name=".SignupScreen" />
         <activity android:name=".MyPageScreen" />
+        <activity android:name=".RecommendScreen" />
+
 
 
     </application>
