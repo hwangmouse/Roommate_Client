@@ -53,45 +53,23 @@ public class CL10 extends AppCompatActivity {
                 navigateToNextActivity("유동적"); // 선택된 값
             }
         });
-
-        Button buttonMypage = findViewById(R.id.btnTabMyPage);
-
-        buttonMypage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Mypage로 이동
-                //Intent intent = new Intent(CL1.this, Mypage.class);
-                //startActivity(intent);
-            }
-        });
-
-        Button buttoninspect = findViewById(R.id.btnTabInspect);
-
-        buttoninspect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // inspect  이동
-                //Intent intent = new Intent(CL1.this, Inspect.class);
-                //startActivity(intent);
-            }
-        });
-
-        Button buttonrecommend = findViewById(R.id.btnTabRecommend);
-
-        buttonrecommend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // recommend 이동
-                //Intent intent = new Intent(CL1.this, recommend.class);
-                //startActivity(intent);
-            }
-        });
     }
+
     private void navigateToNextActivity(String question10Answer) {
         Intent checklistIntent = new Intent(CL10.this, RecommendScreen.class);
         // Intent에 데이터 추가
         checklistIntent.putExtra(CL9.EXTRA_QUESTION_9_ANSWER, question9Answer);
         checklistIntent.putExtra(EXTRA_QUESTION_10_ANSWER, question10Answer);
-        startActivity(checklistIntent);
+        Intent intent = getIntent();
+        if (intent != null) {
+            String q9Answer = intent.getStringExtra(com.example.roommateplatform.CheckList.CL9.EXTRA_QUESTION_9_ANSWER); // CL9.java에 상수 정의 필요
+
+            // Toast로 모든 값 출력 (디버깅용)
+            StringBuilder toastMessage = new StringBuilder("받은 답변들:\n");
+            toastMessage.append("Q9: ").append(q9Answer != null ? q9Answer : "N/A");
+
+            Toast.makeText(this, toastMessage.toString(), Toast.LENGTH_LONG).show();
+            startActivity(checklistIntent);
+        }
     }
 }
