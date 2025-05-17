@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- 10.0.2.2는 에뮬레이터에서 PC의 localhost를 의미, 127.0.0.1도 추가 가능 -->
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <domain includeSubdomains="true">localhost</domain>
+    </domain-config>
+</network-security-config>

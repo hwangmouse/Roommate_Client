@@ -1,5 +1,6 @@
 package com.example.roommateplatform;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -64,7 +65,7 @@ public class SignupScreen extends AppCompatActivity {
             jsonObject.put("age", age);
             jsonObject.put("password", password);
             jsonObject.put("gender", gender);
-            jsonObject.put("kakaoLink", kakaoLink);
+            jsonObject.put("openChatUrl", kakaoLink);
         } catch (JSONException e) {
             e.printStackTrace();
             return;
@@ -79,19 +80,33 @@ public class SignupScreen extends AppCompatActivity {
         );
 
         Request request = new Request.Builder()
-                .url("http://YOUR_SERVER_IP:PORT/signup")  // Spring Boot 서버 주소로 바꿔줘
+                .url("http://10.0.2.2:8080/api/auth/signup")  // Spring Boot 서버 주소로 바꿔줘
                 .post(body)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
+                Log.e("Signup", "Signup failed: " + e.getMessage());
+                // UI 업데이트 필요하면 runOnUiThread 사용
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                Log.d("Signup", "서버 응답: " + response.body().string());
+                String resBody = response.body().string();
+                Log.d("Signup", "Response: " + resBody);
+                // UI 업데이트 필요하면 runOnUiThread 사용
+
+                // UI 관련 작업은 메인(UI) 스레드에서 실행
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(SignupScreen.this, HomeScreen.class);
+                        startActivity(intent);
+                        finish(); // 회원가입 화면은 종료해도 됨
+                    }
+                });
+
             }
         });
     }
