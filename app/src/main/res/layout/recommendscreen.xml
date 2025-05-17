@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true" >
+
+    <!-- ✅ 헤더 (padding 없음) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#F4BBD3"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="Sorting Hat"
+            android:src="@drawable/sortinghat"
+            android:layout_marginLeft="-15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sorting Hat"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- 제목 + 새로고침 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="룸메이트 추천"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="새로고침"
+            android:backgroundTint="#F4BBD3"
+            android:textColor="#000000"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#888888" />
+
+    <!-- 룸메이트 카드 목록 (반복) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:divider="@null">
+
+            <!-- 예시 카드 1 -->
+            <include layout="@layout/item_roommate_card" />
+            <include layout="@layout/item_roommate_card" />
+            <include layout="@layout/item_roommate_card" />
+            <include layout="@layout/item_roommate_card" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ✅ 하단 탭 -->
+    <LinearLayout
+        android:id="@+id/bottomNavigationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F0F0F0">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTabMyPage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="마이페이지"
+            android:background="#FFC4E1"
+            android:textColor="@android:color/black"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTabInspect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="검사하기"
+            android:background="#FFC4E1"
+            android:textColor="@android:color/black"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTabRecommend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="룸메이트 추천"
+            android:background="#FFC4E1"
+            android:textColor="@android:color/black"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            style="?android:attr/borderlessButtonStyle"/>
+    </LinearLayout>
+
+</LinearLayout>
