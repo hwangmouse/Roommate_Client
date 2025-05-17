@@ -55,7 +55,7 @@
                 android:id="@+id/tvQuestionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1. 기상 시간"
+                android:text="9. 추위"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
@@ -79,7 +79,7 @@
                 android:id="@+id/btnOption1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="오전 6시~9시"
+                android:text="많이 탐"
                 android:background="@drawable/rounded_button"
                 android:textColor="@color/black"
                 android:paddingTop="12dp"
@@ -95,7 +95,7 @@
                 android:id="@+id/btnOption2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="오전 9시~12시"
+                android:text="중간"
                 android:background="@drawable/rounded_button"
                 android:textColor="@color/black"
                 android:paddingTop="12dp"
@@ -109,7 +109,7 @@
                 android:id="@+id/btnOption3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="그 이후"
+                android:text="적게 탐"
                 android:background="@drawable/rounded_button"
                 android:textColor="@color/black"
                 android:paddingTop="12dp"
@@ -144,9 +144,9 @@
             android:paddingBottom="16dp"
             style="?android:attr/borderlessButtonStyle"/>
         <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="#000000"/>
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnTabInspect"
