@@ -54,39 +54,6 @@ public class CL4 extends AppCompatActivity {
                 navigateToNextActivity("약함"); // 선택된 값
             }
         });
-
-        Button buttonMypage = findViewById(R.id.btnTabMyPage);
-
-        buttonMypage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Mypage로 이동
-                //Intent intent = new Intent(CL1.this, Mypage.class);
-                //startActivity(intent);
-            }
-        });
-
-        Button buttoninspect = findViewById(R.id.btnTabInspect);
-
-        buttoninspect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // inspect  이동
-                //Intent intent = new Intent(CL1.this, Inspect.class);
-                //startActivity(intent);
-            }
-        });
-
-        Button buttonrecommend = findViewById(R.id.btnTabRecommend);
-
-        buttonrecommend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // recommend 이동
-                //Intent intent = new Intent(CL1.this, recommend.class);
-                //startActivity(intent);
-            }
-        });
     }
     private void navigateToNextActivity(String question4Answer) {
         Intent checklistIntent = new Intent(CL4.this, CL5.class);
