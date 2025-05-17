@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true">
 
     <!-- ✅ 헤더 (padding 없음) -->
     <LinearLayout
@@ -17,11 +18,8 @@
         android:gravity="center_vertical"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-<<<<<<< HEAD
         app:layout_constraintTop_toTopOf="parent" >
-=======
-        app:layout_constraintTop_toTopOf="parent">
->>>>>>> dba1f4a6c08038c21eba901d4612d91745995b56
+
 
         <ImageView
             android:layout_width="80dp"
@@ -126,15 +124,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <!-- ✅ 하단 탭 -->
     <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/bottomNavigationLayout"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#F0F0F0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:background="#F0F0F0">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnTabMyPage"
@@ -147,10 +144,11 @@
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
             style="?android:attr/borderlessButtonStyle"/>
+
         <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="#000000"/>
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnTabInspect"

@@ -72,7 +72,7 @@ public class CL7 extends AppCompatActivity {
             }
         });
     }
-    private void navigateToNextActivity(String question1Answer) {
+    private void navigateToNextActivity(String question7Answer) {
         Intent checklistIntent = new Intent(CL7.this, CL8.class);
         // Intent에 데이터 추가
         checklistIntent.putExtra(CL6.EXTRA_QUESTION_6_ANSWER, question6Answer);

@@ -28,13 +28,6 @@
         <activity android:name=".SignupScreen" />
         <activity android:name=".MyPageScreen" />
         <activity android:name=".RecommendScreen" />
-
-
-
-
-
-
-
         <activity android:name=".CheckList.CL1" />
         <activity android:name=".CheckList.CL2" />
         <activity android:name=".CheckList.CL3" />
