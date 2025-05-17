@@ -34,21 +34,21 @@ public class CL10 extends AppCompatActivity {
         btnOption1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToNextActivity("많이 함"); // 선택된 값 (예: "1" 대신 의미있는 문자열)
+                navigateToNextActivity("안"); // 선택된 값 (예: "1" 대신 의미있는 문자열)
             }
         });
 
         btnOption2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToNextActivity("중간"); // 선택된 값
+                navigateToNextActivity("밖"); // 선택된 값
             }
         });
 
         btnOption3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToNextActivity("적게 함"); // 선택된 값
+                navigateToNextActivity("유동적"); // 선택된 값
             }
         });
 
