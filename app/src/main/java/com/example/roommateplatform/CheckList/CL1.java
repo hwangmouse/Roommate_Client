@@ -48,10 +48,13 @@ public class CL1 extends AppCompatActivity {
             }
         });
     }
+    public static final String BUNDLE_ANSWERS = "ANSWERS_BUNDLE";
     private void navigateToNextActivity(String question1Answer) {
         Intent checklistIntent = new Intent(CL1.this, CL2.class);
+        Bundle bundle = new Bundle();
+        bundle.putString(CL1.EXTRA_QUESTION_1_ANSWER, question1Answer);
         // Intent에 데이터 추가
-        checklistIntent.putExtra(EXTRA_QUESTION_1_ANSWER, question1Answer);
+        checklistIntent.putExtra(BUNDLE_ANSWERS, bundle);
         startActivity(checklistIntent);
     }
 }

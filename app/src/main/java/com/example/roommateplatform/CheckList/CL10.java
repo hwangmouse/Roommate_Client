@@ -1,11 +1,9 @@
 package com.example.roommateplatform.CheckList;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -54,22 +52,11 @@ public class CL10 extends AppCompatActivity {
             }
         });
     }
-
     private void navigateToNextActivity(String question10Answer) {
         Intent checklistIntent = new Intent(CL10.this, RecommendScreen.class);
         // Intent에 데이터 추가
         checklistIntent.putExtra(CL9.EXTRA_QUESTION_9_ANSWER, question9Answer);
         checklistIntent.putExtra(EXTRA_QUESTION_10_ANSWER, question10Answer);
-        Intent intent = getIntent();
-        if (intent != null) {
-            String q9Answer = intent.getStringExtra(com.example.roommateplatform.CheckList.CL9.EXTRA_QUESTION_9_ANSWER); // CL9.java에 상수 정의 필요
-
-            // Toast로 모든 값 출력 (디버깅용)
-            StringBuilder toastMessage = new StringBuilder("받은 답변들:\n");
-            toastMessage.append("Q9: ").append(q9Answer != null ? q9Answer : "N/A");
-
-            Toast.makeText(this, toastMessage.toString(), Toast.LENGTH_LONG).show();
-            startActivity(checklistIntent);
-        }
+        startActivity(checklistIntent);
     }
 }

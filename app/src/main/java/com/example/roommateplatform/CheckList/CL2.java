@@ -21,6 +21,13 @@ public class CL2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checklist2);
 
+        Intent intent = getIntent();
+        receivedBundle = intent.getBundleExtra(BUNDLE_ANSWERS); // Bundle을 통째로 가져옴
+
+        if (receivedBundle == null) { // 혹시 Bundle이 없는 경우를 대비해 새로 생성
+            receivedBundle = new Bundle();
+        }
+
         question1Answer = getIntent().getStringExtra(CL1.EXTRA_QUESTION_1_ANSWER);
 
         btnOption1 = findViewById(R.id.btnOption1);
@@ -42,11 +49,15 @@ public class CL2 extends AppCompatActivity {
             }
         });
     }
+    public static final String BUNDLE_ANSWERS = "ANSWERS_BUNDLE";
+
+    private Bundle receivedBundle;
     private void navigateToNextActivity(String question2Answer) {
         Intent checklistIntent = new Intent(CL2.this, CL3.class);
         // Intent에 데이터 추가
-        checklistIntent.putExtra(CL1.EXTRA_QUESTION_1_ANSWER, question1Answer);///////////////////////
-        checklistIntent.putExtra(EXTRA_QUESTION_2_ANSWER, question2Answer);
+        receivedBundle.putString(EXTRA_QUESTION_2_ANSWER, question2Answer);
+
+        checklistIntent.putExtra(BUNDLE_ANSWERS, receivedBundle);
         startActivity(checklistIntent);
     }
 }
