@@ -18,13 +18,23 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homescreen);
 
-        Button buttonSignup1 = findViewById(R.id.button_login);
+        Button buttonLogin = findViewById(R.id.button_login);
+        Button buttonSignup = findViewById(R.id.button_signup);
 
-        buttonSignup1.setOnClickListener(new View.OnClickListener() {
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // LoginScreen으로 이동
                 Intent intent = new Intent(HomeScreen.this, LoginScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // LoginScreen으로 이동
+                Intent intent = new Intent(HomeScreen.this, SignupScreen.class);
                 startActivity(intent);
             }
         });
