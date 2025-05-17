@@ -7,19 +7,17 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.roommateplatform.HomeScreen;
-import com.example.roommateplatform.LoginScreen;
 import com.example.roommateplatform.R;
 
-public class CL1 extends AppCompatActivity {
-    public static final String EXTRA_QUESTION_1_ANSWER = "QUESTION_1_ANSWER";
+public class CL5 extends AppCompatActivity {
+    public static final String EXTRA_QUESTION_5_ANSWER = "QUESTION_5_ANSWER";
 
     Button btnOption1, btnOption2, btnOption3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.checklist1);
+        setContentView(R.layout.checklist5);
 
         btnOption1 = findViewById(R.id.btnOption1);
         btnOption2 = findViewById(R.id.btnOption2);
@@ -30,21 +28,21 @@ public class CL1 extends AppCompatActivity {
         btnOption1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToNextActivity("Q1_오전6시_9시"); // 선택된 값 (예: "1" 대신 의미있는 문자열)
+                navigateToNextActivity("가능"); // 선택된 값 (예: "1" 대신 의미있는 문자열)
             }
         });
 
         btnOption2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToNextActivity("Q1_오전9시_12시"); // 선택된 값
+                navigateToNextActivity("불가능"); // 선택된 값
             }
         });
 
         btnOption3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToNextActivity("Q1_그이후"); // 선택된 값
+                navigateToNextActivity("환기를 하면 가능"); // 선택된 값
             }
         });
 
@@ -82,9 +80,9 @@ public class CL1 extends AppCompatActivity {
         });
     }
     private void navigateToNextActivity(String question1Answer) {
-        Intent checklistIntent = new Intent(CL1.this, CL2.class);
+        Intent checklistIntent = new Intent(CL5.this, CL6.class);
         // Intent에 데이터 추가
-        checklistIntent.putExtra(EXTRA_QUESTION_1_ANSWER, question1Answer);
+        checklistIntent.putExtra(EXTRA_QUESTION_5_ANSWER, question1Answer);
         startActivity(checklistIntent);
     }
 }

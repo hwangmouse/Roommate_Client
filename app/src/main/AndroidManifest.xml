@@ -31,6 +31,21 @@
 
 
 
+
+
+
+
+        <activity android:name=".CheckList.CL1" />
+        <activity android:name=".CheckList.CL2" />
+        <activity android:name=".CheckList.CL3" />
+        <activity android:name=".CheckList.CL4" />
+        <activity android:name=".CheckList.CL5" />
+        <activity android:name=".CheckList.CL6" />
+        <activity android:name=".CheckList.CL7" />
+        <activity android:name=".CheckList.CL8" />
+        <activity android:name=".CheckList.CL9" />
+        <activity android:name=".CheckList.CL10" />
+
     </application>
 
 </manifest>
