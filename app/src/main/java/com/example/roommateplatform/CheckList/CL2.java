@@ -14,10 +14,14 @@ public class CL2 extends AppCompatActivity {
 
     Button btnOption1, btnOption2;
 
+    private String question1Answer;///////////////////////////////////////////
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checklist2);
+
+        question1Answer = getIntent().getStringExtra(CL1.EXTRA_QUESTION_1_ANSWER);
 
         btnOption1 = findViewById(R.id.btnOption1);
         btnOption2 = findViewById(R.id.btnOption2);
@@ -71,10 +75,11 @@ public class CL2 extends AppCompatActivity {
             }
         });
     }
-    private void navigateToNextActivity(String question1Answer) {
+    private void navigateToNextActivity(String question2Answer) {
         Intent checklistIntent = new Intent(CL2.this, CL3.class);
         // Intent에 데이터 추가
-        checklistIntent.putExtra(EXTRA_QUESTION_2_ANSWER, question1Answer);
+        checklistIntent.putExtra(CL1.EXTRA_QUESTION_1_ANSWER, question1Answer);///////////////////////
+        checklistIntent.putExtra(EXTRA_QUESTION_2_ANSWER, question2Answer);
         startActivity(checklistIntent);
     }
 }

@@ -14,6 +14,8 @@ public class CL6 extends AppCompatActivity {
 
     Button btnOption1, btnOption2, btnOption3, btnOption4;
 
+    private String question5Answer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,10 +89,11 @@ public class CL6 extends AppCompatActivity {
             }
         });
     }
-    private void navigateToNextActivity(String question1Answer) {
+    private void navigateToNextActivity(String question6Answer) {
         Intent checklistIntent = new Intent(CL6.this, CL7.class);
         // Intent에 데이터 추가
-        checklistIntent.putExtra(EXTRA_QUESTION_6_ANSWER, question1Answer);
+        checklistIntent.putExtra(CL5.EXTRA_QUESTION_5_ANSWER, question5Answer);
+        checklistIntent.putExtra(EXTRA_QUESTION_6_ANSWER, question6Answer);
         startActivity(checklistIntent);
     }
 }

@@ -8,6 +8,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.roommateplatform.R;
+import com.example.roommateplatform.RecommendScreen;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,6 +18,7 @@ public class CL10 extends AppCompatActivity {
     public static final String EXTRA_QUESTION_10_ANSWER = "QUESTION_10_ANSWER";
 
     Button btnOption1, btnOption2, btnOption3;
+    private String question9Answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,10 +85,11 @@ public class CL10 extends AppCompatActivity {
             }
         });
     }
-    private void navigateToNextActivity(String question1Answer) {
-        Intent checklistIntent = new Intent(CL10.this, recommend.class);
+    private void navigateToNextActivity(String question10Answer) {
+        Intent checklistIntent = new Intent(CL10.this, RecommendScreen.class);
         // Intent에 데이터 추가
-        checklistIntent.putExtra(EXTRA_QUESTION_10_ANSWER, question1Answer);
+        checklistIntent.putExtra(CL9.EXTRA_QUESTION_9_ANSWER, question9Answer);
+        checklistIntent.putExtra(EXTRA_QUESTION_10_ANSWER, question10Answer);
         startActivity(checklistIntent);
     }
 }

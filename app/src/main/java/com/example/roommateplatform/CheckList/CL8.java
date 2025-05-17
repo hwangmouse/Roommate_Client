@@ -13,6 +13,7 @@ public class CL8 extends AppCompatActivity {
     public static final String EXTRA_QUESTION_8_ANSWER = "QUESTION_8_ANSWER";
 
     Button btnOption1, btnOption2, btnOption3;
+    private String question7Answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,10 +80,11 @@ public class CL8 extends AppCompatActivity {
             }
         });
     }
-    private void navigateToNextActivity(String question1Answer) {
+    private void navigateToNextActivity(String question8Answer) {
         Intent checklistIntent = new Intent(CL8.this, CL9.class);
         // Intent에 데이터 추가
-        checklistIntent.putExtra(EXTRA_QUESTION_8_ANSWER, question1Answer);
+        checklistIntent.putExtra(CL7.EXTRA_QUESTION_7_ANSWER, question7Answer);
+        checklistIntent.putExtra(EXTRA_QUESTION_8_ANSWER, question8Answer);
         startActivity(checklistIntent);
     }
 }
