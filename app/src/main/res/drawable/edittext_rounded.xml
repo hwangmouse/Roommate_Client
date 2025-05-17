@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <solid android:color="#FFFFFF"/>
-    <corners android:radius="1dp"/>
+    <stroke
+        android:width="2dp"
+        android:color="#FFC4E1" /> <!-- 연한 핑크 -->
+    <corners android:radius="12dp"/>
 </shape>
