@@ -1,62 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/homescreen"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/start_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAFDFA"
-    android:fitsSystemWindows="true">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFFFFF"
+    android:padding="24dp">
 
-    <!-- 헤더 이미지 + 텍스트 -->
-    <LinearLayout
-        android:id="@+id/headerLayout"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+    <!-- Sorting Hat 이미지 -->
+    <ImageView
+        android:id="@+id/hatImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/sortinghat"
+        android:contentDescription="Sorting Hat"
+        android:layout_marginBottom="24dp" />
+
+    <!-- 제목 텍스트 -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="14dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:background="#669FD2">
+        android:text="Sorting Hat"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="36dp" />
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/sorting_hat"
-            android:layout_marginTop="-6dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sorting Hat"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginStart="8dp" />
-    </LinearLayout>
-
-    <!-- 첫 번째 버튼 -->
+    <!-- 회원가입 버튼 -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_signup"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/button_login"
-        android:layout_marginBottom="16dp"
         android:text="회원가입"
-        android:backgroundTint="#F2D195"
-        android:textColor="@color/white"
-        android:background="@drawable/rounded_button" />
+        android:textColor="#000000"
+        android:background="@drawable/rounded_button"
+        android:layout_marginBottom="16dp" />
 
-    <!-- 두 번째 버튼 -->
+    <!-- 로그인 버튼 -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_login"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="120dp"
         android:text="로그인"
-        android:backgroundTint="#F2D195"
-        android:textColor="@color/white"
+        android:textColor="#000000"
         android:background="@drawable/rounded_button" />
-
-</RelativeLayout>
+</LinearLayout>
