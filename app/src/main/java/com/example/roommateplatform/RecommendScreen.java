@@ -34,4 +34,6 @@ public class RecommendScreen extends AppCompatActivity {
             }
         });
     }
+
+
 }
