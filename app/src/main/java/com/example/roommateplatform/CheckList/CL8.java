@@ -12,6 +12,8 @@ import com.example.roommateplatform.R;
 public class CL8 extends AppCompatActivity {
     public static final String EXTRA_QUESTION_8_ANSWER = "QUESTION_8_ANSWER";
 
+    private Bundle receivedBundle;
+    public static final String BUNDLE_ANSWERS = "ANSWERS_BUNDLE";
     Button btnOption1, btnOption2, btnOption3;
     private String question7Answer;
 
@@ -19,6 +21,13 @@ public class CL8 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checklist8);
+
+        Intent intent = getIntent();
+        receivedBundle = intent.getBundleExtra(BUNDLE_ANSWERS); // Bundle을 통째로 가져옴
+
+        if (receivedBundle == null) { // 혹시 Bundle이 없는 경우를 대비해 새로 생성
+            receivedBundle = new Bundle();
+        }
 
         btnOption1 = findViewById(R.id.btnOption1);
         btnOption2 = findViewById(R.id.btnOption2);
@@ -83,8 +92,9 @@ public class CL8 extends AppCompatActivity {
     private void navigateToNextActivity(String question8Answer) {
         Intent checklistIntent = new Intent(CL8.this, CL9.class);
         // Intent에 데이터 추가
-        checklistIntent.putExtra(CL7.EXTRA_QUESTION_7_ANSWER, question7Answer);
-        checklistIntent.putExtra(EXTRA_QUESTION_8_ANSWER, question8Answer);
+        receivedBundle.putString(EXTRA_QUESTION_8_ANSWER, question8Answer);
+
+        checklistIntent.putExtra(BUNDLE_ANSWERS, receivedBundle);
         startActivity(checklistIntent);
     }
 }

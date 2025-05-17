@@ -11,7 +11,8 @@ import com.example.roommateplatform.R;
 
 public class CL4 extends AppCompatActivity {
     public static final String EXTRA_QUESTION_4_ANSWER = "QUESTION_4_ANSWER";
-
+    public static final String BUNDLE_ANSWERS = "ANSWERS_BUNDLE"; // CL1과 동일한 키 사용
+    private Bundle receivedBundle;
     Button btnOption1, btnOption2, btnOption3;
     private String question3Answer;
 
@@ -19,6 +20,13 @@ public class CL4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checklist4);
+
+        Intent intent = getIntent();
+        receivedBundle = intent.getBundleExtra(BUNDLE_ANSWERS); // Bundle을 통째로 가져옴
+
+        if (receivedBundle == null) { // 혹시 Bundle이 없는 경우를 대비해 새로 생성
+            receivedBundle = new Bundle();
+        }
 
         btnOption1 = findViewById(R.id.btnOption1);
         btnOption2 = findViewById(R.id.btnOption2);
@@ -83,8 +91,9 @@ public class CL4 extends AppCompatActivity {
     private void navigateToNextActivity(String question4Answer) {
         Intent checklistIntent = new Intent(CL4.this, CL5.class);
         // Intent에 데이터 추가
-        checklistIntent.putExtra(CL3.EXTRA_QUESTION_3_ANSWER, question3Answer);
-        checklistIntent.putExtra(EXTRA_QUESTION_4_ANSWER, question4Answer);
+        receivedBundle.putString(EXTRA_QUESTION_4_ANSWER, question4Answer);
+
+        checklistIntent.putExtra(BUNDLE_ANSWERS, receivedBundle); // 수정된 Bundle을 다음 액티비티로 전달
         startActivity(checklistIntent);
     }
 }

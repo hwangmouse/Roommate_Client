@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.roommateplatform.CheckList.CL1;
+
 public class LoadingScreen extends AppCompatActivity {
 
     @Override
@@ -17,7 +19,7 @@ public class LoadingScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(LoadingScreen.this, HomeScreen.class);
+                Intent intent = new Intent(LoadingScreen.this, CL1.class);
                 startActivity(intent);
                 finish(); // 뒤로가기 눌렀을 때 다시 로딩화면으로 안 돌아가게
             }
