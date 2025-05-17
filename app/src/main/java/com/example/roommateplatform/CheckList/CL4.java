@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.roommateplatform.R;
 
 public class CL4 extends AppCompatActivity {
-    public static final String EXTRA_QUESTION_4_ANSWER = "QUESTION_4_ANSWER";
+    public static final String EXTRA_QUESTION_4_ANSWER = "sleepingHabit";
     public static final String BUNDLE_ANSWERS = "ANSWERS_BUNDLE"; // CL1과 동일한 키 사용
     private Bundle receivedBundle;
     Button btnOption1, btnOption2, btnOption3;

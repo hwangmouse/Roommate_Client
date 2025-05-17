@@ -11,7 +11,7 @@ import com.example.roommateplatform.R;
 
 public class CL3 extends AppCompatActivity {
     public static final String BUNDLE_ANSWERS = "ANSWERS_BUNDLE";
-    public static final String EXTRA_QUESTION_3_ANSWER = "QUESTION_3_ANSWER";
+    public static final String EXTRA_QUESTION_3_ANSWER = "lightTolerance";
 
     Button btnOption1, btnOption2;
 

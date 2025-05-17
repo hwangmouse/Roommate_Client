@@ -12,7 +12,7 @@ import com.example.roommateplatform.LoginScreen;
 import com.example.roommateplatform.R;
 
 public class CL1 extends AppCompatActivity {
-    public static final String EXTRA_QUESTION_1_ANSWER = "QUESTION_1_ANSWER";
+    public static final String EXTRA_QUESTION_1_ANSWER = "wakeUpTime";
 
     Button btnOption1, btnOption2, btnOption3;
 

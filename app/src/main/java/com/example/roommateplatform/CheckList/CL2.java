@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.roommateplatform.R;
 
 public class CL2 extends AppCompatActivity {
-    public static final String EXTRA_QUESTION_2_ANSWER = "QUESTION_2_ANSWER";
+    public static final String EXTRA_QUESTION_2_ANSWER = "cleaningStyle";
 
     Button btnOption1, btnOption2;
 

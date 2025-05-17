@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.roommateplatform.R;
 
 public class CL9 extends AppCompatActivity {
-    public static final String EXTRA_QUESTION_9_ANSWER = "QUESTION_9_ANSWER";
+    public static final String EXTRA_QUESTION_9_ANSWER = "coldTolerance";
 
     private Bundle receivedBundle;
     public static final String BUNDLE_ANSWERS = "ANSWERS_BUNDLE";

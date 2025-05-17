@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CL10 extends AppCompatActivity {
-    public static final String EXTRA_QUESTION_10_ANSWER = "QUESTION_10_ANSWER";
+    public static final String EXTRA_QUESTION_10_ANSWER = "studyPlace";
 
     Button btnOption1, btnOption2, btnOption3;
     private String question9Answer;

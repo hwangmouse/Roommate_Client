@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.roommateplatform.R;
 
 public class CL5 extends AppCompatActivity {
-    public static final String EXTRA_QUESTION_5_ANSWER = "QUESTION_5_ANSWER";
+    public static final String EXTRA_QUESTION_5_ANSWER = "eatingPermission";
     public static final String BUNDLE_ANSWERS = "ANSWERS_BUNDLE"; // CL1과 동일한 키 사용
     private Bundle receivedBundle;
 
